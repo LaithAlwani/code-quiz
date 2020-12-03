@@ -1,0 +1,26 @@
+ #high-score{
+    display: inline;
+}
+#timer{
+    float: right;
+} 
+
+.welcome{
+    margin-top: 10%;
+}
+
+.questions{
+    margin-top: 10%;
+    display: none;
+}
+
+.game-over{
+    margin-top: 10%;
+    display: none;
+    
+}
+
+.answer-button{
+    display: block;
+    margin: 5px 0;
+}
