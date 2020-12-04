@@ -126,13 +126,13 @@ function displayAnswers(num) {
             setTimeout(function () {
                 displayQuestion(questionNumber);
                 answerStatus.textContent = "";
-            },2000)
+            },500)
         })
         answers.appendChild(button);
     }
 }
 var intials = document.querySelector("#intials");
-var highScoreArrya = []
+var highScoreArrya;
 function gameOver() {
     clearInterval(interval)
     questionsEl.style.display = "none";
@@ -142,25 +142,25 @@ function gameOver() {
 
 }
 
-highscoreButton.addEventListener("click", function (e) {
-    e.stopPropagation();
+highscoreButton.addEventListener("click", function () {
     if (intials.value === "") {
         alert("please enter intials")
     } else {
-
-        highScoreArrya.push(`${intials.value} ${score} out of ${questionsArray.length}`);
+        highScoreArrya.push(` ${intials.value} ${score} `);
         console.log(highScoreArrya);
 
         gameOverEl.style.display = "none";
         highScoresList.style.display = "block";
         displayHighScore();
         intials.value = "";
+        storeDate();
     }
 });
 var highScoreButtons = document.querySelector("#high-score-buttons");
 
 function displayHighScore() {
-    
+    console.log(highScoreArrya);
+    highScoresList.style.display = "block";
     highScoreButtons.style.display = "block";
     highScoresList.textContent = "";
     for (var i = 0; i < highScoreArrya.length; i++) {
@@ -181,3 +181,36 @@ var goBackEl = document.querySelector("#go-back");
 
 
 startButton.addEventListener("click", start);
+
+highScoreEl.addEventListener("click", function(){
+    clearInterval(interval);
+    displayHighScore();
+    highScoreButtons.style.display = "block";
+    questionsEl.style.display = "none";
+    gameOverEl.style.display = "none";
+    welcomeEl.style.display = "none";
+})
+
+var clearButton = document.querySelector("#clear-history");
+clearButton.addEventListener("click", function(){
+    highScoreArrya = [];
+    localStorage.removeItem("scores");
+    if(highScoreArrya.length ===0){
+        highScoresList.textContent = "";
+    }
+})
+
+function storeDate(){
+    localStorage.setItem("scores", JSON.stringify(highScoreArrya) );
+}
+
+function init(){
+    highScoreArrya = JSON.parse(localStorage.getItem("scores")) ;
+    console.log(highScoreArrya);
+    if(highScoreArrya === null){ 
+        highScoreArrya = []; 
+    }
+    
+}
+
+init();

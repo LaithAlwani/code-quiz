@@ -37,9 +37,10 @@
 #high-scores-list{
     display: none;
     margin: 10% auto;
+    font-size: 20px;
 }
 
 #high-score-buttons{
     display: none;
-    margin: 10% auto;
+    text-align: center;
 }
