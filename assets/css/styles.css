@@ -10,8 +10,17 @@
 }
 
 .questions{
-    margin-top: 10%;
+    margin: 10% auto;
+    padding: 15px;
     display: none;
+    width: 80%;
+    border: solid 1px rgba(128, 128, 128, 0.5);
+}
+
+.answer-button{
+    display: block;
+    margin: 10px auto;
+    min-width: 400px;
 }
 
 .game-over{
@@ -20,7 +29,17 @@
     
 }
 
-.answer-button{
-    display: block;
-    margin: 5px 0;
+.input-group{
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+#high-scores-list{
+    display: none;
+    margin: 10% auto;
+}
+
+#high-score-buttons{
+    display: none;
+    margin: 10% auto;
 }

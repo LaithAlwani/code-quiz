@@ -17,10 +17,11 @@
                 <a href="#">high scores</a>
             </div>
             <div id="timer"><span>Time: 00:00</span></div>
-        </div>
-        
+        </div>    
     </header>
+
     <div class="container mt-2">
+
         <div class="welcome text-center">
             <h1>Code Quiz</h1>
             <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae animi consequuntur, eum
@@ -30,15 +31,35 @@
             <button id="start" class="btn btn-success">Start</button>
         </div>
 
-        <div class="questions">
-            <p id="question"></p>
+        <div class="questions text-center">
+            <p id="question" class=""></p>
             <div id="answers">
             </div>
+            <p id="answer-status" class="text-muted"></p>
         </div>
+
         <br>
-        <div class="game-over">
-            when the game is over
+        <div class="game-over text-center">
+            <h3>All Done!</h3>
+            <p id=score></p>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Intials" id="intials">
+                <button class="btn btn-primary" id="high-score-button">Submit</button>
+            </div>
+            
+            
+            
         </div>
+
+        <div id="high-scores-list" class="text-center"></div>
+        <div id="high-score-buttons">
+            <button class="btn btn-info" id="go-back">go back</button>
+            <button id="clear-history" class="btn btn-danger">Clear history</button>
+        </div>
+            
+        
+
+        
 
     </div>
 
