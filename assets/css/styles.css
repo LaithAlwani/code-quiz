@@ -1,14 +1,15 @@
- #high-score{
+ #high-score-button{
     display: inline;
 }
+/*Timer */
 #timer{
     float: right;
 } 
 
 .welcome{
-    margin-top: 10%;
+    margin-top: 10% ;
 }
-
+/* questions display section*/
 .questions{
     margin: 10% auto;
     padding: 15px;
@@ -20,9 +21,9 @@
 .answer-button{
     display: block;
     margin: 10px auto;
-    min-width: 400px;
+    font-weight: bold;
 }
-
+/*game over display section*/
 .game-over{
     margin-top: 10%;
     display: none;
@@ -34,13 +35,27 @@
     margin: 0 auto;
 }
 
-#high-scores-list{
+/*high score display section*/
+#intials-list{
     display: none;
     margin: 10% auto;
     font-size: 20px;
 }
 
-#high-score-buttons{
+#high-score-button-group{
     display: none;
     text-align: center;
+}
+
+/*all buttons in the quiz*/
+.btn{
+    background-color: rgba(20, 148, 52, 0.7);
+    color:white;
+}
+.btn:hover{
+    background-color: rgb(20, 148, 52);
+    color:white;
+}
+.btn:focus{
+    border: red;
 }

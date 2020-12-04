@@ -12,9 +12,9 @@
 
 <body>
     <header class="mt-2">
-        <div class="container">
-            <div id="high-score">
-                <button class="btn btn-warning">high scores</button>
+        <div class="container-fluid ">
+            <div id="high-score-button">
+                <button class="btn ">high scores</button>
             </div>
             <div id="timer"><span>Time: 00:00</span></div>
         </div>    
@@ -24,15 +24,15 @@
 
         <div class="welcome text-center">
             <h1>Code Quiz</h1>
-            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae animi consequuntur, eum
-                accusamus laboriosam temporibus aut. A minus consectetur placeat error vitae illum deserunt, impedit
-                quos
-                harum, blanditiis quam voluptates.</p>
-            <button id="start" class="btn btn-success">Start</button>
+            <p class="lead">Welcome the Code Quiz, a multiple choice quiz, each wrong answer will result in  
+                taking 20 seconds off the clock when you are done please enter your intials and try agian. 
+            </p>
+            <p class="text-center">Press the start button to begin</p>
+            <button id="start" class="btn ">Start</button>
         </div>
 
-        <div class="questions text-center">
-            <p id="question" class=""></p>
+        <div class="questions  text-center">
+            <p id="question-text" class=""></p>
             <div id="answers">
             </div>
             <p id="answer-status" class="text-muted"></p>
@@ -41,18 +41,18 @@
         <br>
         <div class="game-over text-center">
             <h3>All Done!</h3>
-            <p id=score></p>
+            <p id="user-score"></p>
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Intials" id="intials">
-                <button class="btn btn-primary" id="high-score-button">Submit</button>
+                <input type="text" class="form-control mr-1" placeholder="Intials" id="intials">
+                <button class="btn " id="submit-high-score">Submit</button>
             </div>
              
         </div>
 
-        <div id="high-scores-list" class="text-center"></div>
-        <div id="high-score-buttons">
-            <button class="btn btn-info" id="go-back">go back</button>
-            <button id="clear-history" class="btn btn-danger">Clear history</button>
+        <div id="intials-list" class="text-center"></div>
+        <div id="high-score-button-group">
+            <button class="btn" id="go-back">go back</button>
+            <button id="clear-history" class="btn">Clear history</button>
         </div>
             
         
