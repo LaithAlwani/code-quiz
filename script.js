@@ -16,7 +16,7 @@ var clearButton = document.querySelector("#clear-history");
 
 var interval;
 var score = 0;
-var totalSeconds = 120;
+var totalSeconds = 0;
 var questionNumber = 0;
 var highScoreArry;
 
@@ -62,9 +62,31 @@ var question3 = {
     correctAnswer: "btn btn-primary"
 
 }
+var question4 = {
+    question: " in javascript what does the method confirm do?",
+    answers: [
+        "creats and alert",
+        "gets a true or false value from the user",
+        "nothing",
+        "asks the user for an input",
+    ],
+    correctAnswer: "gets a true or false value from the user"
+
+}
+var question5 = {
+    question: "which of the following loops are correct",
+    answers: [
+        "for loop",
+        "which loop",
+        "fruit loop",
+        "for loop and while loop",
+    ],
+    correctAnswer: "for loop and while loop"
+
+}
 //Question Data Ends
 
-var questionsArray = [question1, question2, question3]; // collection of questions
+var questionsArray = [question1, question2, question3,question4, question5]; // collection of questions
 
 init();
 // intialzes the high score array from local storage if any
@@ -90,7 +112,7 @@ function start() {
 
 //starts Timer  
 function startTimer() {
-    totalSeconds = 120;
+    totalSeconds = 70;
     interval = setInterval(function () {
         totalSeconds--;
         console.log(totalSeconds);
