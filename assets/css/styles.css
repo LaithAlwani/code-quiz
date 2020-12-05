@@ -49,11 +49,11 @@
 
 /*all buttons in the quiz*/
 .btn{
-    background-color: rgba(20, 148, 52, 0.7);
+    background-color: rgba(139, 58, 216, 0.7);
     color:white;
 }
 .btn:hover{
-    background-color: rgb(20, 148, 52);
+    background-color: rgb(139, 58, 216);
     color:white;
 }
 .btn:focus{

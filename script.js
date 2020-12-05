@@ -1,4 +1,4 @@
-var highScoreButton = document.querySelector("#high-score-button"); 
+var scoresButton = document.querySelector("#scores-button");
 var timerEl = document.querySelector("#timer");
 var welcomeEl = document.querySelector(".welcome");
 var startButton = document.querySelector("#start");
@@ -68,11 +68,11 @@ var questionsArray = [question1, question2, question3]; // collection of questio
 
 init();
 // intialzes the high score array from local storage if any
-function init(){
-    highScoreArry = JSON.parse(localStorage.getItem("scores")) ;
-    console.log(highScoreArry);
-    if(highScoreArry === null){ 
-        highScoreArry = [];        
+function init() {
+    highScoreArry = JSON.parse(localStorage.getItem("scores"));
+
+    if (highScoreArry === null) {
+        highScoreArry = [];
     }
 }
 //starts the quiz
@@ -138,7 +138,7 @@ function displayAnswers(num) {
         button.addEventListener("click", function (e) {
             //disable all the answerbuttons after clicking one
             var allButtons = document.querySelectorAll(".answer-button");
-            for(var i=0;i<allButtons.length;i++){
+            for (var i = 0; i < allButtons.length; i++) {
                 allButtons[i].disabled = true;
             }
             //checking if the right answer was clicked
@@ -154,7 +154,7 @@ function displayAnswers(num) {
             setTimeout(function () {
                 displayQuestion(questionNumber);
                 answerStatus.textContent = "";
-            },1000)
+            }, 1000)
         })
         answers.appendChild(button);
     }
@@ -172,9 +172,7 @@ SubmitButton.addEventListener("click", function () {
     if (intials.value === "") {
         alert("please enter intials")
     } else {
-        highScoreArry.push(` ${intials.value} ${score} `);
-        console.log(highScoreArry);
-
+        highScoreArry.push(` Intials: ${intials.value} - score: ${score} `);
         gameOverEl.style.display = "none";
         intialsList.style.display = "block";
         displayHighScore();
@@ -185,7 +183,7 @@ SubmitButton.addEventListener("click", function () {
 
 //display the high score array in the high score section
 function displayHighScore() {
-    console.log(highScoreArry);
+
     intialsList.style.display = "block";
     highScoreButtonsGroup.style.display = "block";
     intialsList.textContent = "";
@@ -198,7 +196,7 @@ function displayHighScore() {
     }
 }
 
-highScoreButton.addEventListener("click", function(){
+scoresButton.addEventListener("click", function () {
     clearInterval(interval);
     displayHighScore();
     highScoreButtonsGroup.style.display = "block";
@@ -209,7 +207,7 @@ highScoreButton.addEventListener("click", function(){
 
 //go back button to retry the quiz
 goBackEl.addEventListener("click", goBack);
-function  goBack(){
+function goBack() {
     intialsList.style.display = "none";
     highScoreButtonsGroup.style.display = "none";
     welcomeEl.style.display = "block";
@@ -217,14 +215,20 @@ function  goBack(){
 
 //clearing the intial history
 clearButton.addEventListener("click", clearHistory);
-function clearHistory(){
-    highScoreArry = [];
-    localStorage.removeItem("scores");
-    if(highScoreArry.length ===0){
-        intialsList.textContent = "";
+function clearHistory() {
+    var clearScore = confirm("Are you sure you want to clear all scores?")
+    if (clearScore) {
+        highScoreArry = [];
+        localStorage.removeItem("scores");
+        if (highScoreArry.length === 0) {
+            intialsList.textContent = "";
+        } else {
+            return;
+        }
     }
+
 }
 //store intial and scores to local storage
-function storeDate(){
-    localStorage.setItem("scores", JSON.stringify(highScoreArry) );
+function storeDate() {
+    localStorage.setItem("scores", JSON.stringify(highScoreArry));
 }
