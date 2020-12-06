@@ -5,7 +5,7 @@
 #timer{
     float: right;
 } 
-
+/*welcom message*/
 .welcome{
     margin-top: 10% ;
 }
@@ -13,13 +13,13 @@
 .questions{
     margin: 10% auto;
     padding: 15px;
-    display: none;
+    display: none; /*intial display*/
     width: 80%;
     border: solid 1px rgba(128, 128, 128, 0.5);
 }
 
 .answer-button{
-    display: block;
+    display: block; /*intial display*/
     margin: 10px auto;
     font-weight: bold;
 }
@@ -31,19 +31,19 @@
 }
 
 .input-group{
-    max-width: 60%;
+    max-width: 75%;
     margin: 0 auto;
 }
 
 /*high score display section*/
 #intials-list{
-    display: none;
+    display: none; /*intial display*/
     margin: 10% auto;
     font-size: 20px;
 }
 
 #high-score-button-group{
-    display: none;
+    display: none; /*intial display*/
     text-align: center;
 }
 
@@ -53,9 +53,6 @@
     color:white;
 }
 .btn:hover{
-    background-color: rgb(139, 58, 216);
+    background-color: rgb(152, 87, 212);
     color:white;
-}
-.btn:focus{
-    border: red;
 }

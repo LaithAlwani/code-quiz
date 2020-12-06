@@ -97,8 +97,7 @@ function init() {
         highScoreArry = [];
     }
 }
-//starts the quiz
-startButton.addEventListener("click", start);
+
 
 //starts the quiz
 function start() {
@@ -131,6 +130,9 @@ function formatTime(timeInSeconds) {
     return (`Time left: ${minutes}:${seconds}`);
 }
 
+//starts the quiz
+startButton.addEventListener("click", start);
+
 //displays the question to the user
 function displayQuestion(num) {
     // if the number is less than the array's length display the question
@@ -152,13 +154,13 @@ function displayAnswers(num) {
     for (var i = 0; i < questionsArray[num].answers.length; i++) {
         //create a button for each answer
         var button = document.createElement("button");
-        //set attributes fot each button
+        //set attributes to each button
         button.textContent = questionsArray[num].answers[i];
         button.setAttribute("data-answer", questionsArray[num].answers[i]);
         button.classList.add("answer-button", "btn");
-        //add a click listener for each button
+        //add a click listener to each button
         button.addEventListener("click", function (e) {
-            //disable all the answerbuttons after clicking one
+            //disable all the answer buttons after clicking one of the answer buttons
             var allButtons = document.querySelectorAll(".answer-button");
             for (var i = 0; i < allButtons.length; i++) {
                 allButtons[i].disabled = true;
@@ -189,6 +191,7 @@ function gameOver() {
     gameOverEl.style.display = "block";
     userScore.textContent = `Your score is: ${score} out of ${questionsArray.length}`;
 }
+
 //submit the intials and push to the high score array
 SubmitButton.addEventListener("click", function () {
     if (intials.value === "") {

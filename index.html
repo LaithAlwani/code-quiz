@@ -11,57 +11,53 @@
 </head>
 
 <body>
+    <!-- header section has the score button and the timer -->
     <header class="mt-2">
         <div class="container-fluid ">
             <div id="scores-button">
                 <button class="btn ">Scores</button>
             </div>
             <div id="timer"><span>Time: 00:00</span></div>
-        </div>    
+        </div>
     </header>
-
-    <div class="container mt-2">
-
-        <div class="welcome text-center">
+    <!-- quiz components -->
+    <section class="container mt-2">
+        <!-- Welcome message -->
+        <article class="welcome text-center">
             <h1>Code Quiz</h1>
-            <p class="lead">Welcome the Code Quiz, a multiple choice quiz, each wrong answer will result in  
-                taking 20 seconds off the clock when you are done please enter your intials and try agian. 
+            <p class="lead">Welcome the Code Quiz, a multiple choice quiz, each wrong answer will result in
+                taking 20 seconds off the clock when you are done please enter your intials and try agian.
             </p>
             <p class="text-center">Press the start button to begin</p>
             <button id="start" class="btn ">Start</button>
-        </div>
-
-        <div class="questions  text-center">
+        </article>
+        <!-- question are presented one at time -->
+        <article class="questions  text-center">
             <p id="question-text" class=""></p>
             <div id="answers">
             </div>
             <p id="answer-status" class="text-muted"></p>
-        </div>
-
-        <br>
-        <div class="game-over text-center">
+        </article>
+        <!-- game over and intials input -->
+        <article class="game-over text-center">
             <h3>All Done!</h3>
             <p id="user-score"></p>
             <div class="input-group">
                 <input type="text" class="form-control mr-1" placeholder="Intials" id="intials">
                 <button class="btn " id="submit-high-score">Submit</button>
             </div>
-             
-        </div>
 
-        <div id="intials-list" class="text-center"></div>
-        <div id="high-score-button-group">
+        </article>
+        <!-- Intials display  -->
+        <article id="intials-list" class="text-center"></article>
+        <!-- buttons to navigate back to the start or clear the scores -->
+        <article id="high-score-button-group">
             <button class="btn" id="go-back">go back</button>
             <button id="clear-history" class="btn">Clear history</button>
-        </div>
-            
-        
+        </article>
+    </section>
 
-        
-
-    </div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
